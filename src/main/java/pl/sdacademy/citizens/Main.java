@@ -1,5 +1,6 @@
 package pl.sdacademy.citizens;
 
+import pl.sdacademy.citizens.model.Animal;
 import pl.sdacademy.citizens.model.Person;
 
 import java.text.ParseException;
@@ -10,9 +11,12 @@ public class Main {
     public static void main(String[] args) throws ParseException {
         CitizensApplication app = new CitizensApplication();
         List<Person> people = app.process();
-        app.groupByName(people);
-//        app.mapLastName(people);
-//        System.out.println("==============================");
+        List<Animal> animals = app.processAnimals();
+
+        for (Animal animal : animals) {
+            System.out.println(animal);
+        }
+
 //        app.mapLastNameLambda(people);
 //        app.writeModifiedEntries(people);
 //        app.write1(people);

@@ -32,6 +32,7 @@ public class Animal {
         return "Animal{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", species = "+ species+
                 '}';
     }
 

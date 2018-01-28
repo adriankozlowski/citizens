@@ -14,11 +14,21 @@ public class CitizensApplication {
 
     private PersonReader personReader;
     private PersonWriter personWriter;
+    private AnimalReader animalReader;
 
 
     public CitizensApplication() {
         this.personReader = new PersonReader();
         this.personWriter = new PersonWriter();
+        this.animalReader = new AnimalReader();
+    }
+
+    public List<Animal> processAnimals() throws ParseException {
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        File file = new File(classLoader.getResource("animal.csv").getFile());
+        List<Animal> animals = animalReader.readFromFile(file);
+
+        return animals;
     }
 
     public List<Person> process() throws ParseException {
@@ -136,5 +146,6 @@ public class CitizensApplication {
         }
         return result;
     }
+
 }
 
