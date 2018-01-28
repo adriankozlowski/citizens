@@ -11,6 +11,7 @@ public class Person {
     private String sex;
     private LocalDate birthDate;
     private String invalidEntryReason;
+    private List<Animal> animals;
 
     public Person(Long id, String name, String lastName, String sex, LocalDate birthDate) {
         this.id = id;
@@ -21,11 +22,8 @@ public class Person {
     }
 
     public Person(Long id, String name, String lastName, String sex, LocalDate birthDate, List<Animal> animals) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.sex = sex;
-        this.birthDate = birthDate;
+        this(id, name, lastName, sex, birthDate);
+        this.animals = animals;
     }
 
     public static class Builder {
@@ -164,6 +162,9 @@ public class Person {
         return String.valueOf(lastNameChars);
     }
 
+    public List<Animal> getAnimals() {
+        return animals;
+    }
 
     @Override
     public String toString() {
