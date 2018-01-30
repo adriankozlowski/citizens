@@ -26,6 +26,13 @@ public class Person {
         this.animals = animals;
     }
 
+    public void addAnimal(Animal animal){
+        if (this.animals == null) {
+            this.animals = new ArrayList<>();
+        }
+        this.animals.add(animal);
+    }
+
     public static class Builder {
         private Long id;
         private String name;
@@ -174,6 +181,6 @@ public class Person {
                 ", lastName='" + lastName + '\'' +
                 ", sex='" + sex + '\'' +
                 ", birthDate=" + birthDate +
-                "\n";
+                ", animals = "+ animals;
     }
 }

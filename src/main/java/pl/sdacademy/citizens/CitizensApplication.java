@@ -147,5 +147,14 @@ public class CitizensApplication {
         return result;
     }
 
+    public void pairPersonAndAnimal(List<Person> people, List<Animal> animals) {
+        for (Person person : people) {
+            for (Animal animal : animals) {
+                if (person.getId().equals(animal.getId())) {
+                    person.addAnimal(animal);
+                }
+            }
+        }
+    }
 }
 
